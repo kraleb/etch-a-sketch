@@ -12,21 +12,74 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
   background-color: var(--lightblack);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
+h1, h2 {
   color: white;
   text-decoration: overline underline;
-  border: 2px solid white;
   padding-top: 1px;
+}
+
+button {
+  background-color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  min-width: 75px;
+  border: 2px solid white;
+  font-weight: 900;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+.container {
+  display: flex;
+  border: 1px solid orange;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu {
+  width: 250px;
+  gap: 15px;
+  padding: 5px;
+  border: 1px solid cyan;
+  display: inherit;
+  flex-direction: inherit;
+  align-items: center;
+  margin: auto;
+}
+
+#notes {
+  display: flex;
+  flex-direction: inherit;
+  gap: 7px;
 }
 
 .column {
   display: inline-block;
   box-sizing: border-box;
-  border: 1px solid white;;
+  vertical-align: top;
+}
+
+/**
+.column:hover {
+  background-color: white;
+}
+*/
+
+.hovered {
+  background-color: white;
 }
 
 .sketch-frame {

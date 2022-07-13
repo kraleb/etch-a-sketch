@@ -1,10 +1,9 @@
 // DOM ELEMENTS
 const sketchpad = document.querySelector("#sketchpad");
-generateGrid(sketchpad, 16);
+generateGrid(sketchpad, 100);
 
 // LOGIC
 function generateGrid(container, squares) {
-  console.log(container);
   let squareHeight = deriveSquareSize(container.clientHeight, squares);
   let squareWidth = deriveSquareSize(container.clientWidth, squares);
   for (var rowCount = 0; rowCount < squares; rowCount++) {
@@ -22,6 +21,7 @@ function generateGrid(container, squares) {
         "style",
         `width: ${squareWidth}px; height: ${squareHeight}px`
       );
+      column.addEventListener("mouseenter", handleHover);
       row.appendChild(column);
     }
     // create column divs within row
@@ -30,5 +30,12 @@ function generateGrid(container, squares) {
 function deriveSquareSize(dimension, squares) {
   return dimension / squares;
 }
-function handleHover() {}
+function handleHover(event) {
+  if (event.ctrlKey) {
+    event.target.classList.add("hovered");
+  }
+  if (event.shiftKey) {
+    event.target.classList.remove("hovered");
+  }
+}
 function resetGrid() {}
