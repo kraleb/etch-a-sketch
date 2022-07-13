@@ -23,6 +23,12 @@ h1 {
   padding-top: 1px;
 }
 
+.column {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid white;;
+}
+
 .sketch-frame {
   height: 800px;
   width: 800px;
