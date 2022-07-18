@@ -40,7 +40,6 @@ button:hover {
 
 .container {
   display: flex;
-  border: 1px solid orange;
 }
 
 .menu-container {
@@ -53,7 +52,6 @@ button:hover {
   width: 250px;
   gap: 15px;
   padding: 5px;
-  border: 1px solid cyan;
   display: inherit;
   flex-direction: inherit;
   align-items: center;
