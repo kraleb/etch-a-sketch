@@ -1,9 +1,36 @@
 // DOM ELEMENTS
+const root = document.documentElement;
 const sketchpad = document.querySelector("#sketchpad");
 const resetButton = document.getElementById("reset_button");
-generateGrid(sketchpad, 100);
+const remakeButton = document.getElementById("remake_button");
+const backgroundColorButton = document.getElementById("background_swatch");
+const etchColorButton = document.getElementById("etch_swatch");
+generateGrid(sketchpad, 16);
 
 resetButton.addEventListener("click", resetGridColors);
+remakeButton.addEventListener("click", function () {
+  let newSquares = prompt("Set the grid size (number of squares per side)");
+
+  if (newSquares) {
+    if (typeof Number(newSquares) == "number" && Number(newSquares) <= 100) {
+      generateGrid(sketchpad, newSquares);
+    } else {
+      alert("Please enter a number less than 100");
+    }
+  }
+});
+etchColorButton.addEventListener("click", function () {
+  changeColor("etch_color");
+});
+backgroundColorButton.addEventListener("click", function () {
+  changeColor("sketch_background");
+});
+
+function changeColor(cssVariable) {
+  console.log(cssVariable);
+  let newColor = prompt(`Change the ${cssVariable} color`);
+  root.style.setProperty("--" + cssVariable, newColor);
+}
 
 // LOGIC
 function generateGrid(container, squares) {
@@ -49,6 +76,8 @@ function handleHover(event) {
   }
 }
 function resetGridColors() {
+  root.style.setProperty("--sketch_background", "black");
+  root.style.setProperty("--etch_color", "white");
   document.querySelectorAll(".etched").forEach((el) => {
     el.classList.remove("etched");
   });

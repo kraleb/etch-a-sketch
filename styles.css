@@ -1,6 +1,8 @@
 :root {
-  --lightblack: rgb(20,20,20);
-  --darkergray: rgb(40,40,40);
+  --sketch_background: black;
+  --etch_color: white;
+  --light_black: rgb(20,20,20);
+  --darker_gray: rgb(40,40,40);
 }
 
 html, body {
@@ -13,7 +15,7 @@ html, body {
   justify-content: center;
   align-items: center;
   color: white;
-  background-color: var(--lightblack);
+  background-color: var(--light_black);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -58,6 +60,21 @@ button:hover {
   margin: auto;
 }
 
+.swatch {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+}
+
+#background_swatch {
+  background-color: var(--sketch_background);
+}
+
+#etch_swatch {
+  background-color: var(--etch_color);
+}
+
+
 #notes {
   display: flex;
   flex-direction: inherit;
@@ -70,21 +87,15 @@ button:hover {
   vertical-align: top;
 }
 
-/**
-.column:hover {
-  background-color: white;
-}
-*/
-
 .etched {
-  background-color: white;
+  background-color: var(--etch_color);
 }
 
 .sketch-frame {
   height: 800px;
   width: 800px;
   border-width: 10px;
-  border-color: white gray var(--darkergray) gray;
+  border-color: white gray var(--darker_gray) gray;
   border-style: solid;
-  background-color: black;
+  background-color: var(--sketch_background);
 }
