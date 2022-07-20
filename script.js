@@ -1,11 +1,21 @@
 // DOM ELEMENTS
 const sketchpad = document.querySelector("#sketchpad");
+const resetButton = document.getElementById("reset_button");
 generateGrid(sketchpad, 100);
+
+resetButton.addEventListener("click", resetGridColors);
 
 // LOGIC
 function generateGrid(container, squares) {
   let squareHeight = deriveSquareSize(container.clientHeight, squares);
   let squareWidth = deriveSquareSize(container.clientWidth, squares);
+  let row;
+  let column;
+  // remove any existing children nodes
+  while (container.firstChild) {
+    container.firstChild.remove();
+  }
+
   for (var rowCount = 0; rowCount < squares; rowCount++) {
     // create row div
     row = document.createElement("div");
@@ -32,10 +42,14 @@ function deriveSquareSize(dimension, squares) {
 }
 function handleHover(event) {
   if (event.ctrlKey) {
-    event.target.classList.add("hovered");
+    event.target.classList.add("etched");
   }
   if (event.shiftKey) {
-    event.target.classList.remove("hovered");
+    event.target.classList.remove("etched");
   }
 }
-function resetGrid() {}
+function resetGridColors() {
+  document.querySelectorAll(".etched").forEach((el) => {
+    el.classList.remove("etched");
+  });
+}
