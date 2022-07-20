@@ -1,0 +1,22 @@
+{
+  "name": "etch-a-sketch",
+  "version": "1.0.0",
+  "description": "project",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kraleb/etch-a-sketch.git"
+  },
+  "author": "kaleb bordner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kraleb/etch-a-sketch/issues"
+  },
+  "homepage": "https://github.com/kraleb/etch-a-sketch#readme",
+  "devDependencies": {
+    "eslint": "^8.20.0"
+  }
+}
